@@ -20,5 +20,8 @@ _Version Beta 1_ (*that should not been, bug 1*)
 ## How to fix them
 ### Bug 1
 *** 
-The fix is simple: Add an variable, whenever window hides, it will set variable to False, and if window is visble, it will be True, and show context only if variable is True.
+The fix is simple: Add an variable, whenever window hides, it will set variable to False, and if window is visble, it will be True, and show context only if variable is True. 
+\
+\
 Status: Fixed
+![Fixed Bug 1 in Version 3 of Debug User Interface](https://upload-and-view.github.io/turbowarp/assets/image4.png)
