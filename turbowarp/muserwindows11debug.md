@@ -7,4 +7,6 @@ This option makes every variable visible.
 This option let user hide text with beta version 
 ## The "debugTestUI"
 This option changes User Interface to it's debug version 
-![Version 1 of an Debug User Interface](https://rupload-and-view.github.io/turbowarp/assets/image1.png)
+***
+![Version 1 of an Debug User Interface](https://upload-and-view.github.io/turbowarp/assets/image1.png)
+_Version 0KB2025010201_
