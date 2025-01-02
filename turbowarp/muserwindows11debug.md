@@ -7,3 +7,4 @@ This option makes every variable visible.
 This option let user hide text with beta version 
 ## The "debugTestUI"
 This option changes User Interface to it's debug version 
+![Version 1 of an Debug User Interface](https://)
