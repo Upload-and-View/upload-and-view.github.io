@@ -16,6 +16,7 @@ _Version Beta 1_
 \
 ![Version 3 of an Debug User Interface](https://upload-and-view.github.io/turbowarp/assets/image5.png)
 _Version Beta 2_
+\
 
 ### Bugs
 ![Bug 1 in Version 2 of Debug User Interface (Content does not hide)](https://upload-and-view.github.io/turbowarp/assets/image3.png)
