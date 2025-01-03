@@ -14,14 +14,12 @@ _Version 0KB2025010201_
 ![Version 2 of an Debug User Interface](https://upload-and-view.github.io/turbowarp/assets/image2.png)
 _Version Beta 1_
 ***
+![Version 3 of an Debug User Interface](https://upload-and-view.github.io/turbowarp/assets/image5.png)
+_Version Beta 2_
+***
 # Bugs
 ![Bug 1 in Version 2 of Debug User Interface (Content does not hide)](https://upload-and-view.github.io/turbowarp/assets/image3.png)\
 _Version Beta 1_ (*that should not been, bug 1*)
-## How to fix them
-### Bug 1
-*** 
-The fix is simple: Add an variable, whenever window hides, it will set variable to False, and if window is visble, it will be True, and show context only if variable is True. 
-\
 \
 Status: Fixed
-![Fixed Bug 1 in Version 3 of Debug User Interface](https://upload-and-view.github.io/turbowarp/assets/image4.png)
+![Fixed Bug 1 in Version 3 of Debug User Interface (now it hides)](https://upload-and-view.github.io/turbowarp/assets/image4.png)
