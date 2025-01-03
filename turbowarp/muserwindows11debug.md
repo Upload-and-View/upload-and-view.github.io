@@ -26,6 +26,8 @@ _Version Beta 1_ (*that should not been, bug 1*)
 \
 Status: Fixed
 ![Fixed Bug 1 in Version 3 of Debug User Interface (now it hides)](https://upload-and-view.github.io/turbowarp/assets/image4.png)
+\
+![Bug 2 in Version 4 of Debug User Interface (when shutdown from start, items stay in screen](https://upload-and-view.github.io/turbowarp/assets/image7.png)
 
 ### Notes
 > You wanted personalization on debug ui? Here it is. But, anything WILL have bugs. After setting theme, ***you need to minimize, and maximize windows to take changes apply.*** Currently, personalization can't do changes to Debug Menu, because it is from original system. (This note is'nt effective now)
