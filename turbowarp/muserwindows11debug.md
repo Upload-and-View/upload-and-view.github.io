@@ -7,16 +7,16 @@ I can barely say, this is only feature in beta. So please don't say that does no
 This option let user hide text with beta version. Only in not Debug UI.
 ## The "debugTestUI"
 This option changes User Interface to it's debug version 
-***
+\
 ![Version 1 of an Debug User Interface](https://upload-and-view.github.io/turbowarp/assets/image1.png)
 _Version 0KB2025010201_
-***
+\
 ![Version 2 of an Debug User Interface](https://upload-and-view.github.io/turbowarp/assets/image2.png)
 _Version Beta 1_
-***
+\
 ![Version 3 of an Debug User Interface](https://upload-and-view.github.io/turbowarp/assets/image5.png)
 _Version Beta 2_
-***
+
 ### Bugs
 ![Bug 1 in Version 2 of Debug User Interface (Content does not hide)](https://upload-and-view.github.io/turbowarp/assets/image3.png)
 \
@@ -27,9 +27,12 @@ Status: Fixed
 
 ### Notes
 > You wanted personalization on debug ui? Here it is. But, anything WILL have bugs. After setting theme, ***you need to minimize, and maximize windows to take changes apply.*** Currently, personalization can't do changes to Debug Menu, because it is from original system. (This note is'nt effective now)
-> ***
+> \
+> \
 > You wanted personalization on debug ui? Here it is. But, anything WILL have bugs. After setting theme, ***you need to minimize, and maximize windows to take changes apply. If the app is Debug Menu, all you need to do is nothing.*** (This note is effective now)
-> ***
+> \
+> \
 > Now, background changes text and icon colours if the theme is changing!
-> ***
+> \
+> \
 > In Version 4, we want to make more info and app control, with loading screen and more tests. That will take from us more time.
