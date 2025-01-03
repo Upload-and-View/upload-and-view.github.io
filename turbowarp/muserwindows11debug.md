@@ -31,3 +31,5 @@ Status: Fixed
 > You wanted personalization on debug ui? Here it is. But, anything WILL have bugs. After setting theme, ***you need to minimize, and maximize windows to take changes apply. If the app is Debug Menu, all you need to do is nothing.*** (This note is effective now)
 > ***
 > Now, background changes text and icon colours if the theme is changing!
+> ***
+> In Version 4, we want to make more info and app control, with loading screen and more tests. That will take from us more time.
