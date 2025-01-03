@@ -36,3 +36,6 @@ Status: Fixed
 > \
 > \
 > In Version 4, we want to make more info and app control, with loading screen and more tests. That will take from us more time.
+> \
+> \
+> We did it. You can access to start now, find link to this page, see how it loads and try to test minigame. (window can be dragged, and player's position does not reset.)
