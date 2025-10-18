@@ -1,3 +1,5 @@
 <script>
-document.write(Math.floor(Date.now() / 1000));
+const unixTime = Math.floor(Date.now() / 1000);
+const json = { a: unixTime.toString() };
+document.write(JSON.stringify(json));
 </script>
