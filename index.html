@@ -1,3 +1,14 @@
-<script>const unixTime = Math.floor(Date.now() / 1000);
-const json = { a: unixTime.toString() };
-console.log(JSON.stringify(json));</script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Unix Time JSON</title>
+</head>
+<body>
+<script>
+  const unixTime = Math.floor(Date.now() / 1000);
+  const json = { a: unixTime.toString() };
+  document.body.textContent = JSON.stringify(json);
+</script>
+</body>
+</html>
