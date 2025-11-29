@@ -1,14 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Unix Time JSON</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roblox RichText Generator</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; background: #f0f0f0; }
+  label { display: block; margin-top: 10px; }
+  textarea { width: 100%; height: 100px; margin-top: 5px; font-size: 16px; }
+  #output { width: 100%; height: 100px; margin-top: 10px; font-size: 16px; }
+</style>
 </head>
 <body>
+
+<h1>Roblox RichText Generator</h1>
+
+<label>Enter Text:
+  <textarea id="inputText">Hello, Roblox!</textarea>
+</label>
+
+<label>Font:
+  <select id="fontPicker">
+    <option value="Arial">Arial</option>
+    <option value="SourceSans">SourceSans</option>
+    <option value="Gotham">Gotham</option>
+    <option value="Roboto">Roboto</option>
+  </select>
+</label>
+
+<label>Text Color:
+  <input type="color" id="colorPicker" value="#ff0000">
+</label>
+
+<label>Highlight Color:
+  <input type="color" id="highlightPicker" value="#ffff00">
+</label>
+
+<button onclick="generateRichText()">Generate RichText</button>
+
+<h3>Generated Roblox RichText:</h3>
+<textarea id="output" readonly></textarea>
+
 <script>
-  const unixTime = Math.floor(Date.now() / 1000);
-  const json = { a: unixTime.toString() };
-  document.body.textContent = JSON.stringify(json);
+function generateRichText() {
+    const text = document.getElementById('inputText').value;
+    const font = document.getElementById('fontPicker').value;
+    const color = document.getElementById('colorPicker').value;
+    const highlight = document.getElementById('highlightPicker').value;
+
+    // Convert colors to Roblox hex (without #)
+    const colorHex = color.replace('#', '');
+    const highlightHex = highlight.replace('#', '');
+
+    // Roblox RichText format
+    const richText = `<font face="${font}"><font color="#${colorHex}" backgroundcolor="#${highlightHex}">${text}</font></font>`;
+
+    document.getElementById('output').value = richText;
+}
 </script>
+
 </body>
 </html>
