@@ -5,57 +5,82 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Roblox RichText Generator</title>
 <style>
-  body { font-family: Arial, sans-serif; padding: 20px; background: #f0f0f0; }
+  body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
   label { display: block; margin-top: 10px; }
   textarea { width: 100%; height: 100px; margin-top: 5px; font-size: 16px; }
-  #output { width: 100%; height: 100px; margin-top: 10px; font-size: 16px; }
+  #output { width: 100%; height: 120px; margin-top: 10px; font-size: 16px; }
+  #preview { width: 100%; min-height: 100px; margin-top: 10px; padding: 10px; background: white; border: 1px solid #ccc; }
 </style>
 </head>
 <body>
 
 <h1>Roblox RichText Generator</h1>
 
-<label>Enter Text:
+<label>Enter text:
   <textarea id="inputText">Hello, Roblox!</textarea>
 </label>
 
-<label>Font:
+<label>Font face:
   <select id="fontPicker">
     <option value="Arial">Arial</option>
     <option value="SourceSans">SourceSans</option>
     <option value="Gotham">Gotham</option>
     <option value="Roboto">Roboto</option>
+    <option value="SciFi">SciFi</option>
+    <option value="ComicSansMS">ComicSansMS</option>
+    <option value="Code">Code</option>
+    <option value="Highway">Highway</option>
+    <option value="Fantasy">Fantasy</option>
   </select>
 </label>
 
-<label>Text Color:
-  <input type="color" id="colorPicker" value="#ff0000">
+<label>Font size:
+  <input type="number" id="fontSize" value="14" min="8" max="100">
 </label>
 
-<label>Highlight Color:
-  <input type="color" id="highlightPicker" value="#ffff00">
+<label>Text color:
+  <input type="color" id="colorPicker" value="#000000">
 </label>
 
+<fieldset style="margin-top:10px;">
+  <legend>Styles</legend>
+  <input type="checkbox" id="bold"> <label for="bold">Bold</label>
+  <input type="checkbox" id="italic"> <label for="italic">Italic</label>
+  <input type="checkbox" id="underline"> <label for="underline">Underline</label>
+  <input type="checkbox" id="strikethrough"> <label for="strikethrough">Strikethrough</label>
+</fieldset>
+
+<br><br>
 <button onclick="generateRichText()">Generate RichText</button>
 
 <h3>Generated Roblox RichText:</h3>
 <textarea id="output" readonly></textarea>
 
+<h3>Preview:</h3>
+<div id="preview"></div>
+
 <script>
 function generateRichText() {
-    const text = document.getElementById('inputText').value;
-    const font = document.getElementById('fontPicker').value;
-    const color = document.getElementById('colorPicker').value;
-    const highlight = document.getElementById('highlightPicker').value;
+  let text = document.getElementById('inputText').value;
+  const face = document.getElementById('fontPicker').value;
+  const size = document.getElementById('fontSize').value;
+  const color = document.getElementById('colorPicker').value;
 
-    // Convert colors to Roblox hex (without #)
-    const colorHex = color.replace('#', '');
-    const highlightHex = highlight.replace('#', '');
+  // Apply styles
+  if(document.getElementById('bold').checked) text = `<b>${text}</b>`;
+  if(document.getElementById('italic').checked) text = `<i>${text}</i>`;
+  if(document.getElementById('underline').checked) text = `<u>${text}</u>`;
+  if(document.getElementById('strikethrough').checked) text = `<s>${text}</s>`;
 
-    // Roblox RichText format
-    const richText = `<font face="${font}"><font color="#${colorHex}" backgroundcolor="#${highlightHex}">${text}</font></font>`;
+  // Build font tag
+  const richText = `<font face="${face}" color="${color}" size="${size}">${text}</font>`;
 
-    document.getElementById('output').value = richText;
+  // Output
+  document.getElementById('output').value = richText;
+
+  // Preview
+  const previewDiv = document.getElementById('preview');
+  previewDiv.innerHTML = richText;
 }
 </script>
 
