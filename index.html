@@ -4,60 +4,178 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Roblox RichText Generator</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
-  label { display: block; margin-top: 10px; }
-  textarea { width: 100%; height: 100px; margin-top: 5px; font-size: 16px; }
-  #output { width: 100%; height: 120px; margin-top: 10px; font-size: 16px; }
-  #preview { width: 100%; min-height: 100px; margin-top: 10px; padding: 10px; background: white; border: 1px solid #ccc; }
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #3b3b55);
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 800px;
+    width: 100%;
+    background: #2b2b3f;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffd500;
+  }
+
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 500;
+  }
+
+  select, input[type="number"], input[type="color"], textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  fieldset {
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+  }
+
+  legend {
+    font-weight: 600;
+    color: #ffd500;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #ffd500;
+    color: #2b2b3f;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  button:hover {
+    background: #ffea70;
+  }
+
+  #output {
+    width: 100%;
+    height: 120px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-family: monospace;
+    font-size: 14px;
+    background: #1e1e2f;
+    color: #fff;
+    resize: none;
+  }
+
+  #preview {
+    width: 100%;
+    min-height: 120px;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    background: #1e1e2f;
+    border: 2px solid #555;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .flex-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .flex-row > * {
+    flex: 1;
+  }
 </style>
 </head>
 <body>
 
-<h1>Roblox RichText Generator</h1>
+<div class="container">
+  <h1>Roblox RichText Generator</h1>
 
-<label>Enter text:
+  <label>Enter your text:</label>
   <textarea id="inputText">Hello, Roblox!</textarea>
-</label>
 
-<label>Font face:
-  <select id="fontPicker">
-    <option value="Arial">Arial</option>
-    <option value="SourceSans">SourceSans</option>
-    <option value="Gotham">Gotham</option>
-    <option value="Roboto">Roboto</option>
-    <option value="SciFi">SciFi</option>
-    <option value="ComicSansMS">ComicSansMS</option>
-    <option value="Code">Code</option>
-    <option value="Highway">Highway</option>
-    <option value="Fantasy">Fantasy</option>
-  </select>
-</label>
+  <div class="flex-row">
+    <div>
+      <label>Font:</label>
+      <select id="fontPicker">
+        <option value="Arial">Arial</option>
+        <option value="SourceSans">SourceSans</option>
+        <option value="Gotham">Gotham</option>
+        <option value="Roboto">Roboto</option>
+        <option value="SciFi">SciFi</option>
+        <option value="ComicSansMS">ComicSansMS</option>
+        <option value="Code">Code</option>
+        <option value="Highway">Highway</option>
+        <option value="Fantasy">Fantasy</option>
+      </select>
+    </div>
 
-<label>Font size:
-  <input type="number" id="fontSize" value="14" min="8" max="100">
-</label>
+    <div>
+      <label>Font size:</label>
+      <input type="number" id="fontSize" value="14" min="8" max="100">
+    </div>
 
-<label>Text color:
-  <input type="color" id="colorPicker" value="#000000">
-</label>
+    <div>
+      <label>Text color:</label>
+      <input type="color" id="colorPicker" value="#ffd500">
+    </div>
+  </div>
 
-<fieldset style="margin-top:10px;">
-  <legend>Styles</legend>
-  <input type="checkbox" id="bold"> <label for="bold">Bold</label>
-  <input type="checkbox" id="italic"> <label for="italic">Italic</label>
-  <input type="checkbox" id="underline"> <label for="underline">Underline</label>
-  <input type="checkbox" id="strikethrough"> <label for="strikethrough">Strikethrough</label>
-</fieldset>
+  <fieldset>
+    <legend>Styles</legend>
+    <input type="checkbox" id="bold"> <label for="bold">Bold</label>
+    <input type="checkbox" id="italic"> <label for="italic">Italic</label>
+    <input type="checkbox" id="underline"> <label for="underline">Underline</label>
+    <input type="checkbox" id="strikethrough"> <label for="strikethrough">Strikethrough</label>
+  </fieldset>
 
-<br><br>
-<button onclick="generateRichText()">Generate RichText</button>
+  <button onclick="generateRichText()">Generate RichText</button>
 
-<h3>Generated Roblox RichText:</h3>
-<textarea id="output" readonly></textarea>
+  <label>Generated RichText:</label>
+  <textarea id="output" readonly></textarea>
 
-<h3>Preview:</h3>
-<div id="preview"></div>
+  <label>Preview:</label>
+  <div id="preview"></div>
+</div>
 
 <script>
 function generateRichText() {
@@ -75,12 +193,9 @@ function generateRichText() {
   // Build font tag
   const richText = `<font face="${face}" color="${color}" size="${size}">${text}</font>`;
 
-  // Output
+  // Output & preview
   document.getElementById('output').value = richText;
-
-  // Preview
-  const previewDiv = document.getElementById('preview');
-  previewDiv.innerHTML = richText;
+  document.getElementById('preview').innerHTML = richText;
 }
 </script>
 
